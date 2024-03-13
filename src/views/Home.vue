@@ -1,7 +1,11 @@
 <template>
-  <HelloWorld />
+  <HomeMain />
+
+  <Footer />
+  
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import Footer from '@/components/Footer.vue'
+  import HomeMain from '@/components/HomeMain.vue'
 </script>
