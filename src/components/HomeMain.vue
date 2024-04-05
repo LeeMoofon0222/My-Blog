@@ -1,5 +1,12 @@
 <template>
     <v-main class="pt-0"  style="background-color: darkslategray;">
+      <div class="carousel-container"></div>
+    <!-- 固定內容的容器 -->
+    <div class="fixed-content">
+      <img src="https://avatars.githubusercontent.com/u/119401072?v=4" alt="Profile Image" class="profile-image">
+      <h1>李沐風 / Moofon</h1>
+      <p>WEB / APP / GAME / AI / Full stack</p>
+    </div>
       <v-carousel height="750">
         <v-carousel-item
           cover
@@ -7,26 +14,21 @@
           :src="item.imageUrl"
           :key="index"
         >
-        <!--
-        <div class="carousel-text">
-          <h1>固定文字</h1>
-          <p>這裡是您要添加的固定文字內容。</p>
-        </div>-->
         </v-carousel-item>
       </v-carousel>
       <v-container>
-        <h1>Skills</h1>
         <v-row>
           <v-col
-            v-for="(service, index) in petServices"
+            v-for="(Development, index) in Developments"
             :key="index"
             cols="12"
             md="4"
+            class="py-12"
           >
             <v-card height="450">
-              <v-img cover :src="service.imageUrl" height="300"></v-img>
-              <v-card-title>{{ service.name }}</v-card-title>
-              <v-card-text>{{ service.description }}</v-card-text>
+              <v-img :src="Development.imageUrl" contain height="300"></v-img>
+              <v-card-title>{{ Development.name }}</v-card-title>
+              <v-card-text>{{ Development.description }}</v-card-text>
               <v-card-actions>
                 <v-btn color="primary">learn more</v-btn>
               </v-card-actions>
@@ -37,18 +39,18 @@
       <v-container>
         <v-row>
           <v-col cols="12">
-            <h1>Project Introdution</h1>
           </v-col>
           <v-col
-            v-for="(product, index) in products"
+            v-for="(other, index) in others"
             :key="index"
             cols="12"
             md="4"
+            class="py-12"
           >
             <v-card height="450">
-              <v-img cover :src="product.imageUrl" height="300"></v-img>
-              <v-card-title>{{ product.name }}</v-card-title>
-              <v-card-text>{{ product.description }}</v-card-text>
+              <v-img :src="other.imageUrl" contain height="300"></v-img>
+              <v-card-title>{{ other.name }}</v-card-title>
+              <v-card-text>{{ other.description }}</v-card-text>
               <v-card-actions>
                 <v-btn color="primary">learn more</v-btn>
               </v-card-actions>
@@ -63,18 +65,18 @@
     export default {
       data() {
         return {
-          petServices: [
+          Developments: [
             {
-              name: 'Full Stack Web/App Development',
-              description: 'Vuetify, Vue, Asp .Net Core, Flutter, Dart, MSSQL, MySQL, Firebase, GCP etc. ',
+              name: 'Full Stack Web Development',
+              description: 'Use Vuetify + Asp .Net Core + SQL Server to build a website.',
               imageUrl:
                 'https://assets.materialup.com/uploads/77fccd42-2e01-423b-a759-590c5aaa426e/preview.png',
             },
             {
-              name: 'Algorithm and Data Structure',
-              description: 'Use C++ solved problems from Leetcode, Uva or Zerojudge',
+              name: 'App Development',
+              description: 'Record the App development process and provide simple teaching',
               imageUrl:
-                'data:image/png;base64,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',
+                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/5069.png?raw=true',
             },
             {
               name: 'Game Development',
@@ -109,24 +111,24 @@
                 'https://github.com/LeeMoofon0222/Dirty-Detect/blob/main/runs/detect/train32/Pic1.jpg?raw=true',
             },
           ],
-          products: [
+          others: [
             {
-              name: 'Logic.AI',
-              description: 'Use Yolov8 to train a model. And use it to add logic to a video',
+              name: 'AI',
+              description: 'Intro My AI projects',
               imageUrl:
-                'https://github.com/LeeMoofon0222/Logic.AI/raw/main/ReadMe_Picture/Pic1.png?raw=true',
+                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/826118.png?raw=true',
             },
             {
-              name: 'Englist',
-              description: 'An App made with Flutter + GCP. Can collecting and mastering new words',
+              name: 'Algorithm and Data Structure',
+              description: 'Use C++ solved problems from Leetcode, Uva or Zerojudge',
               imageUrl:
-                'https://github.com/LeeMoofon0222/Englist/blob/master/ReadMe_Picture/Pic5.png?raw=true',
+                'data:image/png;base64,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',
             },
             {
-              name: 'Dreaming in the sky',
-              description: 'This is a Sand-Box game created with Unity3D',
+              name: 'Daily-Life',
+              description: 'Record my daily life and my thoughts.',
               imageUrl:
-                'https://github.com/LeeMoofon0222/Dreaming_in_the_sky/raw/main/ReadMe_Picture/Pic2.png?raw=true',
+                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/1933926.png?raw=true',
             },
           ],
         }
@@ -134,17 +136,49 @@
     }
   </script>
   
-  <style scoped>
-    .carousel-text {
-    position: absolute;
-    top: 50%; /* 將容器置於父元素的中央 */
-    left: 50%;
-    transform: translate(-50%, -50%); /* 用 transform 屬性將元素置於正確位置 */
-    color: white; /* 調整文字顏色 */
-    text-align: center; /* 將文字置於容器中央 */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 添加文字陰影效果 */
-    z-index: 1; /* 確保文字在圖片之上 */
-  }
-  </style>
+<style scoped>
+.carousel-container {
+  position: relative; /* 相對定位，作為輪播圖的容器 */
+}
+
+.fixed-content {
+  position: absolute; /* 絕對定位，使元素浮動在輪播之上 */
+  top: 20%; /* 垂直居中 */
+  left: 50%; /* 水平居中 */
+  transform: translate(-50%, -50%); /* 精確居中定位 */
+  z-index: 2; /* 層疊次序要高於輪播項目 */
+  text-align: center; /* 文字居中對齊 */
+}
+
+.fixed-content img {
+  max-width: 200px; /* 限制圖片寬度 */
+  height: auto; /* 高度自動 */
+  margin-bottom: 16px; /* 圖片與文字間的間隔 */
+}
+
+.fixed-content h1 {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #fff; /* 文字顏色 */
+  font-size: 48px;
+}
+
+.fixed-content p {
+  color: #fff; /* 文字顏色 */
+  font-size: 36px;
+}
+
+.profile-image {
+  border-radius: 50%; /* 創建圓形效果 */
+  width: 200px; /* 設定固定寬度 */
+  height: 200px; /* 設定和寬度相同的高度 */
+  object-fit: cover; /* 確保圖片覆蓋整個容器不失真 */
+  border: 4px solid white; /* 可選，為圓形圖片添加邊框 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可選，為圓形圖片添加陰影 */
+  margin-bottom: 16px; /* 圖片與下方元素的間隔 */
+}
+
+  
+</style>
   
   

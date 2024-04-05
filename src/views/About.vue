@@ -1,3 +1,4 @@
+
 <template>
     <v-main>
         <!-- 公司簡介部分 -->
@@ -5,7 +6,7 @@
             <v-container class="text-center">
                 <h1 class="mb-4 text-h1">小明寵物店</h1>
                 <v-divider></v-divider>
-
+  
                 <!-- 公司介紹 -->
                 <section class="my-4">
                     <h4 class="text-h4">公司介紹</h4>
@@ -13,7 +14,7 @@
                         小明寵物店成立於2000年，致力於提供最優質的寵物服務和產品。我們以熱情的態度、高品質的服務和公道的價格而自豪。
                     </p>
                 </section>
-
+  
                 <!-- 企業文化 -->
                 <section class="my-4">
                     <h4 class="text-h4">企業文化</h4>
@@ -36,7 +37,7 @@
                         </v-list-item>
                     </v-list>
                 </section>
-
+  
                 <!-- 公司願景 -->
                 <section class="my-4">
                     <h4 class="text-h4">公司願景</h4>
@@ -44,7 +45,7 @@
                         小明寵物店的願景是成為寵物服務領域的全球領袖。我們希望通過我們的努力，改善寵物和寵物主人的生活，並為社會創造更多的善意和關懷。
                     </p>
                 </section>
-
+  
                 <!-- 公司賣點 -->
                 <section class="my-4">
                     <h4 class="text-h4">我們的賣點</h4>
@@ -73,7 +74,7 @@
                 </section>
             </v-container>
         </section>
-
+  
         <!-- 服務部分 -->
         <section>
             <v-container>
@@ -109,7 +110,7 @@
                 </v-row>
             </v-container>
         </section>
-
+  
         <!-- 產品部分 -->
         <section>
             <v-container>
@@ -145,7 +146,7 @@
                 </v-row>
             </v-container>
         </section>
-
+  
         <!-- 聯系信息部分 -->
         <section>
             <v-container>
@@ -174,4 +175,4 @@
             </v-container>
         </section>
     </v-main>
-</template>
+  </template>

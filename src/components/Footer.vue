@@ -26,7 +26,7 @@ const socialMedias = reactive([
 
             <v-col class="text-center mt-4" cols="12">
                 <v-btn v-for="media in socialMedias" :key="media" class="mx-4" :icon="media.icon" :href="media.link"
-                    variant="text"></v-btn>
+                    variant="text" target="_blank"></v-btn>
             </v-col>
 
 

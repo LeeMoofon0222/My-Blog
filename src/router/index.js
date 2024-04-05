@@ -36,6 +36,18 @@ const routes = [
     ],
   },
   {
+    path: "/posts",
+    component: () => import("@/layouts/default/Default.vue"),
+    children: [
+      {
+        path: "",
+        name: "Posts",
+        component: () =>
+          import(/* webpackChunkName: "about" */ "@/views/Posts.vue"),
+      },
+    ],
+  },
+  {
     path: "/about",
     component: () => import("@/layouts/default/Default.vue"),
     children: [
@@ -43,19 +55,7 @@ const routes = [
         path: "",
         name: "About",
         component: () =>
-          import(/* webpackChunkName: "about" */ "@/views/About.vue"),
-      },
-    ],
-  },
-  {
-    path: "/contact",
-    component: () => import("@/layouts/default/Default.vue"),
-    children: [
-      {
-        path: "",
-        name: "Contact",
-        component: () =>
-          import(/* webpackChunkName: "shop" */ "@/views/Contact.vue"),
+          import(/* webpackChunkName: "shop" */ "@/views/About.vue"),
       },
     ],
   },
@@ -92,7 +92,7 @@ const routes = [
           ),
       },
       {
-        path: "register",
+        path: "/register",
         name: "Register",
         component: () =>
           import(
@@ -101,15 +101,9 @@ const routes = [
       },
       {
         path: "/dashboard",
-        component: () => import("@/layouts/default/Default.vue"),
-        children: [
-          {
-            path: "",
-            name: "Dashboard",
-            component: () =>
-              import(/* webpackChunkName: "dashboard" */ "@/views/Dashboard.vue"),
-          },
-        ],
+        name: "Dashboard",
+        component: () =>
+          import(/* webpackChunkName: "dashboard" */ "@/views/Dashboard.vue"),
       },
     ],
   },
