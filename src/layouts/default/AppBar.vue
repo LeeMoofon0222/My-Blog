@@ -1,9 +1,10 @@
 <template>
-  <v-app-bar class="px-1" color="#2F4F4F">
+  <v-app-bar class="px-1" color="#3D013D">
     <v-btn icon="mdi-home" to="/index"></v-btn>
     <v-app-bar-title>Moofon's Blog</v-app-bar-title>
     <v-btn color="white" variant="text" class="mx-2" rounded="xl" to="/index">Home page</v-btn>
-    <v-btn color="white" variant="text" class="mx-2" rounded="xl" to="/shop">Projects</v-btn>
+    <v-btn color="white" variant="text" class="mx-2" rounded="xl" to="/projects">Projects</v-btn>
+    <v-btn color="white" variant="text" class="mx-2" rounded="xl" to="/other">Other</v-btn>
     <v-btn color="white" variant="text" class="mx-2" rounded="xl" to="/posts">Your Posts</v-btn>
     <v-btn color="white" variant="text" class="mx-2" rounded="xl" to="/about">About Me</v-btn>
     <v-spacer></v-spacer>
