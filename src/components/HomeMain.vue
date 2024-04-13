@@ -29,7 +29,7 @@
               <v-card-title>{{ Development.name }}</v-card-title>
               <v-card-text>{{ Development.description }}</v-card-text>
               <v-card-actions>
-                <v-btn color="primary">learn more</v-btn>
+                <v-btn color="primary" @click="goToProjectsPageWithSearch(Development.class)">learn more</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -50,8 +50,11 @@
               <v-img :src="other.imageUrl" contain height="300" style="background-color: #666666;"></v-img>
               <v-card-title>{{ other.name }}</v-card-title>
               <v-card-text>{{ other.description }}</v-card-text>
+              <v-card-actions v-if="other.name == 'AI'">
+                <v-btn color="primary" @click="goToProjectsPageWithSearch(other.class)">learn more</v-btn>
+              </v-card-actions>
               <v-card-actions>
-                <v-btn color="primary">learn more</v-btn>
+                <v-btn color="primary" to="/other">learn more</v-btn>
               </v-card-actions>
             </v-card>
           </v-col>
@@ -68,20 +71,45 @@
             {
               name: 'Full Stack Web Development',
               description: 'Use Vuetify + Asp .Net Core + SQL Server to build a full stack website.',
+              class: 'Website',
               imageUrl:
                 'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Full_Stack.png?raw=true',
             },
             {
               name: 'App Development',
               description: 'Record the App development process and provide simple teaching',
+              class: 'App',
               imageUrl:
                 'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/App.png?raw=true',
             },
             {
               name: 'Game Development',
-              description: '3D Game Development, VR Game Development and Reinforcement learning',
+              description: 'Game development using Unity and C#',
+              class: 'Game',
               imageUrl:
                 'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Unity.png?raw=true',
+            },
+          ],
+          others: [
+            {
+              name: 'AI',
+              description: 'Intro My AI projects',
+              class: 'AI',
+              imageUrl:
+                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Ai.png?raw=true',
+            },
+            {
+              name: 'Algorithm and Data Structure',
+              description: 'Use C++ solved problems from Leetcode, Uva or Zerojudge',
+              class: 'Algorithm Data Structure C++ Leetcode',
+              imageUrl:
+                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Leetcode.png?raw=true',
+            },
+            {
+              name: 'Life',
+              description: 'Record the special moment in my life',
+              imageUrl:
+                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Daily.png?raw=true',
             },
           ],
           carouselItems: [
@@ -110,28 +138,13 @@
                 'https://github.com/LeeMoofon0222/Dirty-Detect/blob/main/runs/detect/train32/Pic1.jpg?raw=true',
             },
           ],
-          others: [
-            {
-              name: 'AI',
-              description: 'Intro My AI projects',
-              imageUrl:
-                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Ai.png?raw=true',
-            },
-            {
-              name: 'Algorithm and Data Structure',
-              description: 'Use C++ solved problems from Leetcode, Uva or Zerojudge',
-              imageUrl:
-                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Leetcode.png?raw=true',
-            },
-            {
-              name: 'Life',
-              description: 'Record the special moment in my life',
-              imageUrl:
-                'https://github.com/LeeMoofon0222/Picture-Repository/blob/main/Pictures/Daily.png?raw=true',
-            },
-          ],
         }
       },
+      methods: {
+    goToProjectsPageWithSearch(classToSearch) {
+      this.$router.push({ path: '/projects', query: { search: classToSearch } });
+    }
+  }
     }
   </script>
   

@@ -1,178 +1,117 @@
-
 <template>
-    <v-main>
-        <!-- 公司簡介部分 -->
-        <section>
-            <v-container class="text-center">
-                <h1 class="mb-4 text-h1">小明寵物店</h1>
-                <v-divider></v-divider>
+    <v-container class="grey lighten-5">
+      <v-row justify="center">
+        <v-col cols="12" md="10" lg="8">
+
+          <v-row class="my-6">
+            <v-col cols="12" md="4" class="text-center">
+              <v-avatar size="200" class="mb-4">
+                <img src="https://avatars.githubusercontent.com/u/119401072?v=4" alt="Moofon Avatar" class="avatar-image">
+              </v-avatar>
+              <h1 class="headline mb-2">李沐風/Moofon</h1>
+              <p class="subtitle-1 grey--text">
+                A 19-years-old student studying in Taiwan
+              </p>
+            </v-col>
   
-                <!-- 公司介紹 -->
-                <section class="my-4">
-                    <h4 class="text-h4">公司介紹</h4>
-                    <p>
-                        小明寵物店成立於2000年，致力於提供最優質的寵物服務和產品。我們以熱情的態度、高品質的服務和公道的價格而自豪。
-                    </p>
-                </section>
+            <v-col cols="12" md="8">
+              <h2 class="mb-3">Intro</h2>
+              <br>
+              <p class="body-1">
+                <v-icon small left>mdi-palette</v-icon>
+                🌱 A Full-Stack engineer focus on Website, Mobile App and Game Design
+              </p>
+              <p class="body-1">
+                <v-icon small left>mdi-robot</v-icon>
+                📚 Recently learning Algorithms and Data structures
+              </p>
+              <p class="body-1">
+                <v-icon small left>mdi-console-line</v-icon>
+                🔭 Currently studing in NTUT <br>(Department of Intelligent Automation Engineering) forth grade
+              </p>
+              <p class="body-1">
+                <v-icon small left>mdi-basketball</v-icon>
+                🏀 Basketball lovers
+              </p>
+            </v-col>
+          </v-row>
   
-                <!-- 企業文化 -->
-                <section class="my-4">
-                    <h4 class="text-h4">企業文化</h4>
-                    <v-list>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-body-1">關懷與尊重：我們對待寵物和寵物主人都充滿關懷和尊重。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title
-                                    class="text-body-1">卓越的服務：我們追求卓越，不僅提供高品質的寵物產品，還為寵物主人提供專業的咨詢和支持。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-body-1">社區參與：我們驕傲地融入社區，並積極參與寵物相關的公益活動。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-list>
-                </section>
-  
-                <!-- 公司願景 -->
-                <section class="my-4">
-                    <h4 class="text-h4">公司願景</h4>
-                    <p>
-                        小明寵物店的願景是成為寵物服務領域的全球領袖。我們希望通過我們的努力，改善寵物和寵物主人的生活，並為社會創造更多的善意和關懷。
-                    </p>
-                </section>
-  
-                <!-- 公司賣點 -->
-                <section class="my-4">
-                    <h4 class="text-h4">我們的賣點</h4>
-                    <v-list>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-body-1">專業團隊：我們擁有一支經過專業培訓的團隊，了解不同種類的寵物需求。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-body-1">品質保證：我們只提供最高品質的寵物產品，包括食品、用具、藥品等。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-body-1">定制服務：我們提供定制的服務和建議，以滿足不同寵物的需求。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                        <v-list-item>
-                            <v-list-item-content>
-                                <v-list-item-title class="text-body-1">社區參與：我們積極參與社區，定期舉辦寵物相關的活動和義工工作。</v-list-item-title>
-                            </v-list-item-content>
-                        </v-list-item>
-                    </v-list>
-                </section>
-            </v-container>
-        </section>
-  
-        <!-- 服務部分 -->
-        <section>
-            <v-container>
-                <h2>我們的服務</h2>
-                <v-row>
-                    <v-col cols="12" md="4">
-                        <v-card>
-                            <v-img src="" alt="寵物美容服務"></v-img>
-                            <v-card-title>寵物美容</v-card-title>
-                            <v-card-text>
-                                我們提供專業的寵物美容服務，讓您的寵物看起來煥然一新。
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card>
-                            <v-img src="" alt="寵物寄養服務"></v-img>
-                            <v-card-title>寵物寄養</v-card-title>
-                            <v-card-text>
-                                無論您需要短期或長期的寵物寄養，我們都為您提供安全舒適的環境。
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card>
-                            <v-img src="" alt="寵物訓練服務"></v-img>
-                            <v-card-title>寵物訓練</v-card-title>
-                            <v-card-text>
-                                我們的專業訓練師將幫助您的寵物培養好行為和技能。
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </section>
-  
-        <!-- 產品部分 -->
-        <section>
-            <v-container>
-                <h2>我們的產品</h2>
-                <v-row>
-                    <v-col cols="12" md="4">
-                        <v-card>
-                            <v-img src="" alt="寵物食品"></v-img>
-                            <v-card-title>寵物食品</v-card-title>
-                            <v-card-text>
-                                從高質量的寵物食品到零食，我們有各種各樣的選擇。
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card>
-                            <v-img src="" alt="寵物玩具"></v-img>
-                            <v-card-title>寵物玩具</v-card-title>
-                            <v-card-text>
-                                我們提供各種各樣的寵物玩具，讓您的寵物保持活躍和快樂。
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="4">
-                        <v-card>
-                            <v-img src="" alt="寵物用品"></v-img>
-                            <v-card-title>寵物用品</v-card-title>
-                            <v-card-text>
-                                從項圈到穿戴配件，我們提供一系列寵物用品以滿足您的需求。
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </section>
-  
-        <!-- 聯系信息部分 -->
-        <section>
-            <v-container>
-                <h2>聯系我們</h2>
-                <v-row>
-                    <v-col cols="12" md="6">
-                        <v-card>
-                            <v-card-title>營業時間</v-card-title>
-                            <v-card-text>
-                                周一至周五: 9:00 AM - 6:00 PM<br>
-                                周六至周日: 10:00 AM - 4:00 PM
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                    <v-col cols="12" md="6">
-                        <v-card>
-                            <v-card-title>聯系信息</v-card-title>
-                            <v-card-text>
-                                地址：123 寵物大道，城市，郵編<br>
-                                電話：(123) 456-7890<br>
-                                電子郵件：info@xiaomingpets.com
-                            </v-card-text>
-                        </v-card>
-                    </v-col>
-                </v-row>
-            </v-container>
-        </section>
-    </v-main>
+          <!-- Imagined Resume -->
+          <v-row>
+            <v-col cols="12">
+              <h2 class="subtitle-1 font-weight-bold mb-3">Interests & Hobbies</h2>
+              <p class="body-1">
+                Technology Market Analysis
+              </p>
+              <p class="body-2">
+                It was during the summer following my ninth grade that I first dabbled in the analysis of tech markets. Without the means to invest, I honed my ability to dissect industry news and trends, enriching my understanding of tech businesses and inadvertently sharpening my analytical skills.
+              </p>
+              <br>
+              <p class="body-1">
+                Basketball
+              </p>
+              <br>
+              <p class="body-2">
+                The local courts are where I unwind and channel my energy. Every weekend, I devote a couple of hours to basketball. It's not just about keeping fit; it's where I find my rhythm and, for a moment, let the world fade into the background. It's become one of my favorite sports for the sense of achievement and the community it fosters.
+              </p>
+              <br>
+              <p class="body-1">
+                European and American TV Series
+              </p>
+              <p class="body-2">
+                My downtime often features a backdrop of Western series. Not only do they serve as an entertainment portal, but they also enhance my English proficiency. Immersing myself in authentic accents and colloquialisms sharpens my listening skills and broadens my vocabulary.
+              </p>
+            </v-col>
+          </v-row>
+          
+        </v-col>
+      </v-row>
+    </v-container>
   </template>
+ 
+  
+<style scoped>
+  .headline {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+  
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .mb-3 {
+    margin-bottom: 1rem;
+    font-size: 32px;
+  }
+  
+  .my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+  }
+
+  .avatar-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* 這將確保圖片不會超出元素的大小，並保持比例 */
+}
+
+.body-1 {
+  margin-bottom: 8px;
+  color: black; /* 文字顏色 */
+  font-size: 22px;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* 添加一些響應式樣式以確保在不同屏幕尺寸下表現良好 */
+@media (max-width: 599px) {
+  .avatar-image {
+    max-width: 80%;
+    max-height: 80%;
+  }
+}
+  </style>
+  
