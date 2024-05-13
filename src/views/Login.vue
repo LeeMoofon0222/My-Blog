@@ -43,14 +43,7 @@
 </template>
 <script>
 import router from '@/router';
-import axios from 'axios';
 
-axios({
-    method: 'get',
-    url: 'https://localhost:44330/api/Blog/1'
-})
-.then((response) => console.log(response))
-.catch((error) => console.log(error))
 
 export default {
     data: () => ({

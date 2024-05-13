@@ -34,6 +34,15 @@
 </template>
 
 <script>
+import axios from 'axios';
+
+axios({
+    method: 'get',
+    url: 'https://localhost:44330/api/Blog/1'
+    })
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error))
+
 export default {
     data() {
         return {
@@ -117,10 +126,11 @@ export default {
 
         }
     },
-    created() {
+    async created() {
         if (this.$route.query.search) {
             this.search = this.$route.query.search;
         }
+        await this.fetchLikeCounts();
     },
     computed: {
         totalProject() {
@@ -144,15 +154,34 @@ export default {
         },
     },
     methods: {
-    toggleLike(project) {
-        if (!project.liked) {
-            project.liked = true;
-            project.likes++;
-        } else {
-            project.liked = false;
-            project.likes--;
+        async fetchLikeCounts() {
+        try {
+            const response = await axios.get('https://localhost:44330/api/Blog');
+            const likeCounts = response.data;
+
+            // 將按讚次數更新到每個對象中
+            this.projects.forEach(project => {
+                const likeCount = likeCounts.find(count => count.id === project.id);
+                if (likeCount) {
+                    project.likes = likeCount.good; // 使用 likeCount.good 獲取按讚次數
+                }
+            });
+        } catch (error) {
+            console.error('Error fetching like counts:', error);
         }
-    }
+        },
+        async toggleLike(project) {
+        try {
+            const updatedLikes = project.liked ? project.likes - 1 : project.likes + 1;
+            const response = await axios.put(`https://localhost:44330/api/Blog/${project.id}`, { good: updatedLikes });
+            if (response.status === 200) {
+                project.likes = updatedLikes;
+                project.liked = !project.liked;
+            }
+        } catch (error) {
+            console.error('Error toggling like:', error);
+        }
+        },
     }
 }
 </script>

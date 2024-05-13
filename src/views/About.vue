@@ -36,7 +36,6 @@
             </v-col>
           </v-row>
   
-          <!-- Imagined Resume -->
           <v-row>
             <v-col cols="12">
               <h2 class="subtitle-1 font-weight-bold mb-3">Interests & Hobbies</h2>
@@ -50,7 +49,6 @@
               <p class="body-1">
                 Basketball
               </p>
-              <br>
               <p class="body-2">
                 The local courts are where I unwind and channel my energy. Every weekend, I devote a couple of hours to basketball. It's not just about keeping fit; it's where I find my rhythm and, for a moment, let the world fade into the background. It's become one of my favorite sports for the sense of achievement and the community it fosters.
               </p>
@@ -93,12 +91,12 @@
   .avatar-image {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain; /* 這將確保圖片不會超出元素的大小，並保持比例 */
+  object-fit: contain;
 }
 
 .body-1 {
   margin-bottom: 8px;
-  color: black; /* 文字顏色 */
+  color: black;
   font-size: 22px;
 }
 
@@ -106,7 +104,7 @@
   margin-bottom: 1rem;
 }
 
-/* 添加一些響應式樣式以確保在不同屏幕尺寸下表現良好 */
+
 @media (max-width: 599px) {
   .avatar-image {
     max-width: 80%;
